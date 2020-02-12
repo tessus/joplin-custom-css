@@ -1,0 +1,37 @@
+/* Styling for Dark Theme */
+
+/* Change the font size to 13px */
+body, th, td, .inline-code {
+	font-size: 13px;
+}
+
+/* Colors for different mark tags */
+/* ==mark== */
+mark {
+	background-color: #BBDD66;
+	padding:          1px 2px;
+}
+/* occurrences of search term */
+mark[data-markjs] {
+	background-color: #F3B717;
+	padding:          0;
+}
+/* current search term (local search) */
+mark[data-markjs].mark-selected {
+	background-color: #CF3F00;
+}
+
+/* Add background and padding to preformatted text */
+pre {
+	padding:    0.5em;
+	background: #282c34;
+}
+
+/* change the first 3 headings */
+h1, h2, h3 {
+	background-color: #444444;
+	padding-bottom:   .1em;
+	padding-top:      .2em;
+	padding-left:     .4em;
+	border-bottom:    unset;
+}

@@ -1,0 +1,46 @@
+/* Styling for Dark Theme */
+/* For styling the entire Joplin app (except the rendered Markdown, which is defined in `userstyle.css`) */
+
+/* Headings */
+.ace_heading {
+	color: cyan !important;
+	/* font-weight: bold; */
+	/*font-size: 1.1em;*/
+}
+
+/* inline code and codeblocks */
+.ace_support.ace_function {
+	color: greenyellow !important;
+}
+
+/* text in brackets [ ] */
+.ace_string {
+	color: #f9ee98 !important; /* yellow-ish */
+}
+
+/* stong */
+.ace_string.ace_strong {
+	color: salmon !important;
+}
+
+/* italics */
+.ace_string.ace_emphasis {
+	color: salmon !important;
+	font-style: italic;
+}
+
+/* list elements and checkbox elements */
+.ace_list {
+	color: deepskyblue !important;
+}
+
+/* Input fields: Search (global, local), Note Title */
+/* .header input { */
+input {
+	border-radius: 14px !important;
+	border-style: none;
+	outline: none;
+	/*
+	background-color: #888888 !important;
+	*/
+}
