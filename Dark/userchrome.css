@@ -38,7 +38,7 @@
 /* .header input { */
 input {
 	border-radius: 14px !important;
-	border-style: none;
+	border: 1px solid rgb(85, 85, 85);
 	outline: none;
 	/*
 	background-color: #888888 !important;
