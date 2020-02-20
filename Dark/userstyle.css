@@ -35,3 +35,17 @@ h1, h2, h3 {
 	padding-left:     .4em;
 	border-bottom:    unset;
 }
+
+/* Adjustments for printing and PDF export */
+@media print {
+
+	pre {
+		padding: unset;
+		background: unset;
+	}
+
+	h1, h2, h3 {
+		background-color: #eeeeee;
+	}
+
+}
