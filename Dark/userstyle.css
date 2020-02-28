@@ -50,7 +50,7 @@ h1, h2, h3 {
 
 }
 
-/* Make Katex font (symbols and formulas) bigger */
+/* Katex: Make font (symbols and formulas) bigger */
 /*
 .katex {
 	font-size: 1.6em;
