@@ -56,3 +56,22 @@ h1, h2, h3 {
 	font-size: 1.6em;
 }
 */
+
+/* TOC: Make TOC a fixed height and scrollable */
+/*
+.table-of-contents {
+	overflow-y: auto;
+	height: 18em;
+}
+*/
+
+/* TOC: Use nested counters for list items */
+.table-of-contents ol {
+	counter-reset: list-item;
+}
+.table-of-contents li {
+	display: block; counter-increment: list-item;
+}
+.table-of-contents li:before {
+	content: counters(list-item,'.') ' ';
+}
