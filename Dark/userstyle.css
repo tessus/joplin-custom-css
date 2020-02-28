@@ -27,8 +27,8 @@ pre {
 	background: #282c34;
 }
 
-/* change the first 3 headings */
-h1, h2, h3 {
+/* Heading: change headings */
+h1, h2, h3, h4, h5, h6 {
 	background-color: #444444;
 	padding-bottom:   .1em;
 	padding-top:      .2em;
@@ -36,7 +36,7 @@ h1, h2, h3 {
 	border-bottom:    unset;
 }
 
-/* Adjustments for printing and PDF export */
+/* Print: Adjustments for printing and PDF export */
 @media print {
 
 	pre {
@@ -44,7 +44,7 @@ h1, h2, h3 {
 		background: unset;
 	}
 
-	h1, h2, h3 {
+	h1, h2, h3, h4, h5, h6 {
 		background-color: #eeeeee;
 	}
 
