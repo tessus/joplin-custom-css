@@ -27,7 +27,7 @@ pre {
 	background: #282c34;
 }
 
-/* Heading: change headings */
+/* Headings: change background and padding */
 h1, h2, h3, h4, h5, h6 {
 	background-color: #444444;
 	padding-bottom:   .1em;
@@ -35,6 +35,32 @@ h1, h2, h3, h4, h5, h6 {
 	padding-left:     .4em;
 	border-bottom:    unset;
 }
+
+/* TOC: Use nested counters for list items */
+.table-of-contents ol {
+	counter-reset: list-item;
+}
+.table-of-contents li {
+	display: block; counter-increment: list-item;
+}
+.table-of-contents li:before {
+	content: counters(list-item,'.') ' ';
+}
+
+/* TOC: Make TOC a fixed height and scrollable */
+/*
+.table-of-contents {
+	overflow-y: auto;
+	height: 18em;
+}
+*/
+
+/* Katex: Make font (symbols and formulas) bigger */
+/*
+.katex {
+	font-size: 1.6em;
+}
+*/
 
 /* Print: Adjustments for printing and PDF export */
 @media print {
@@ -48,30 +74,4 @@ h1, h2, h3, h4, h5, h6 {
 		background-color: #eeeeee;
 	}
 
-}
-
-/* Katex: Make font (symbols and formulas) bigger */
-/*
-.katex {
-	font-size: 1.6em;
-}
-*/
-
-/* TOC: Make TOC a fixed height and scrollable */
-/*
-.table-of-contents {
-	overflow-y: auto;
-	height: 18em;
-}
-*/
-
-/* TOC: Use nested counters for list items */
-.table-of-contents ol {
-	counter-reset: list-item;
-}
-.table-of-contents li {
-	display: block; counter-increment: list-item;
-}
-.table-of-contents li:before {
-	content: counters(list-item,'.') ' ';
 }
