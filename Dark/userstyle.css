@@ -83,7 +83,7 @@ h6:before {
 	display: block; counter-increment: list-item;
 }
 .table-of-contents li:before {
-	content: counters(list-item,'.') ' ';
+	content: counters(list-item,'.') '.\0000a0';
 }
 
 /* TOC: Make TOC a fixed height and scrollable */
