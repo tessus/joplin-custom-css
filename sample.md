@@ -13,7 +13,7 @@ Aurea prima sata est aetas, quae vindice nullo, sponte sua, sine lege fidem rect
     Aurea prima sata est aetas, quae vindice nullo,
     sponte sua, sine lege fidem rectumque colebat.
 
-Test **strong** and _italics_ markup.
+Test **strong** and _italics_ markup. Here's a ==marked== text.
 
 Aurea prima sata est aetas, quae vindice nullo, sponte sua, sine lege fidem rectumque colebat.
 
