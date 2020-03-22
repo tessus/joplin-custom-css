@@ -34,6 +34,13 @@
 	color: deepskyblue !important;
 }
 
+/* checkbox [ ] and [x] */
+/*
+.ace_variable {
+	color: lightgrey !important;
+}
+*/
+
 /* Input fields: Search (global, local), Note Title */
 /* .header input { */
 input {
