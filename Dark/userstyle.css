@@ -101,6 +101,34 @@ h6:before {
 }
 */
 
+/* set general link color - includes TOC links */
+/*
+a {
+	color: #a6a6ff;
+}
+*/
+
+/* change the color of INTERNAL links */
+/*
+a[data-resource-id] {
+	color: #d28fff;
+}
+*/
+
+/* change other resource link icons to the same as the internal link color */
+/*
+.resource-icon {
+	background-color: #d28fff;
+}
+*/
+
+/* do not display the Joplin resource icon */
+/*
+.resource-icon.fa-joplin {
+	display: none;
+}
+*/
+
 /* Print: Adjustments for printing and PDF export */
 @media print {
 
