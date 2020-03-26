@@ -129,6 +129,11 @@ a[data-resource-id] {
 }
 */
 
+/* Better alignment for resource icons */
+.resource-icon {
+	top: .4em !important;
+}
+
 /* Print: Adjustments for printing and PDF export */
 @media print {
 
