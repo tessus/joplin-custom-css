@@ -1,47 +1,58 @@
-/* Styling for Dark Theme */
-/* For styling the entire Joplin app (except the rendered Markdown, which is defined in `userstyle.css`) */
+/*****************************************************************************
+ * Styling for Dark Theme                                                    *
+ *                                                                           *
+ * For styling the entire Joplin app (except the rendered Markdown,          *
+ * which is defined in `userstyle.css`)                                      *
+ *****************************************************************************/
 
-/* Headings */
+/*------ Editor: Headings ---------------------------------------------------*/
 .ace_heading {
 	color: cyan !important;
 	/* font-weight: bold; */
 	/*font-size: 1.1em;*/
 }
+/*---------------------------------------------------------------------------*/
 
-/* inline code and codeblocks */
+/*------ Editor: inline code and codeblocks ---------------------------------*/
 .ace_support.ace_function {
 	color: greenyellow !important;
 }
+/*---------------------------------------------------------------------------*/
 
-/* text in brackets [ ] */
+/*------ Editor: text in brackets [ ] ---------------------------------------*/
 .ace_string {
 	color: #f9ee98 !important; /* yellow-ish */
 }
+/*---------------------------------------------------------------------------*/
 
-/* stong */
+/*------ Editor: strong -----------------------------------------------------*/
 .ace_string.ace_strong {
 	color: salmon !important;
 }
+/*---------------------------------------------------------------------------*/
 
-/* italics */
+/*------ Editor: italics ----------------------------------------------------*/
 .ace_string.ace_emphasis {
 	color: salmon !important;
 	font-style: italic;
 }
+/*---------------------------------------------------------------------------*/
 
-/* list elements and checkbox elements */
+/*------ Editor: list elements and checkbox elements ------------------------*/
 .ace_list {
 	color: deepskyblue !important;
 }
+/*---------------------------------------------------------------------------*/
 
-/* checkbox [ ] and [x] */
+/*------ Editor: checkbox [ ] and [x] ---------------------------------------*/
 /*
 .ace_variable {
 	color: lightgrey !important;
 }
 */
+/*---------------------------------------------------------------------------*/
 
-/* Dim notebook and note list items */
+/*------ Notebook and note list panes: Dim items ----------------------------*/
 /*
 a.list-item {
 	color: #A3A79F !important;
@@ -55,8 +66,9 @@ a.list-item {
 	opacity: .5;
 }
 */
+/*---------------------------------------------------------------------------*/
 
-/* use lines for notebook tree */
+/*------ Notebook pane: use lines for notebook tree -------------------------*/
 /*
 .folders i.fa.fa-minus-square, .folders i.fa.fa-plus-square {
 	padding-right: 3px !important;
@@ -72,8 +84,9 @@ a.list-item {
 	margin: 0 !important;
 }
 */
+/*---------------------------------------------------------------------------*/
 
-/* Input fields: Search (global, local), Note Title */
+/*------ Input fields: Search (global, local), Note Title -------------------*/
 /* .header input { */
 input {
 	border-radius: 14px !important;
@@ -83,3 +96,4 @@ input {
 	background-color: #888888 !important;
 	*/
 }
+/*---------------------------------------------------------------------------*/
