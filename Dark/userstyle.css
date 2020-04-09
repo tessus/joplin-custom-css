@@ -21,6 +21,11 @@ mark[data-markjs].mark-selected {
 	background-color: #CF3F00;
 }
 
+/* align checkbox to the first line (baseline) */
+li.md-checkbox .checkbox-wrapper {
+	align-items: baseline;
+}
+
 /* Add background and padding to preformatted text */
 pre {
 	padding:    0.5em;
