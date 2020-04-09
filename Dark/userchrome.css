@@ -41,6 +41,21 @@
 }
 */
 
+/* Dim notebook and note list items */
+/*
+a.list-item {
+	color: #A3A79F !important;
+}
+
+.fa.fa-plus-square, .fa.fa-minus-square {
+	color: #575856 !important;
+}
+
+.note-list input[type="checkbox"i] {
+	opacity: .5;
+}
+*/
+
 /* Input fields: Search (global, local), Note Title */
 /* .header input { */
 input {
