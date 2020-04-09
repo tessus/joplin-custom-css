@@ -56,6 +56,23 @@ a.list-item {
 }
 */
 
+/* use lines for notebook tree */
+/*
+.folders i.fa.fa-minus-square, .folders i.fa.fa-plus-square {
+	padding-right: 3px !important;
+}
+
+.folders .list-item-container {
+	margin: 0 !important;
+}
+
+.folders a.list-item {
+	border-left: 1px solid #575856 !important;
+	padding-left: 9px;
+	margin: 0 !important;
+}
+*/
+
 /* Input fields: Search (global, local), Note Title */
 /* .header input { */
 input {
