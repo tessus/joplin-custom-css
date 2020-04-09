@@ -1,11 +1,17 @@
-/* Styling for Dark Theme */
+/*****************************************************************************
+ * Styling for Dark Theme                                                    *
+ *                                                                           *
+ * Rendered Markdown                                                         *
+ * Application styling is defined in `userchrome.css`                        *
+ *****************************************************************************/
 
-/* Change the font size to 13px */
+/*------ Change the font size to 13px ---------------------------------------*/
 body, th, td, .inline-code {
 	font-size: 13px;
 }
+/*---------------------------------------------------------------------------*/
 
-/* Colors for different mark tags */
+/*------ Colors for different mark tags -------------------------------------*/
 /* ==mark== */
 mark {
 	background-color: #BBDD66;
@@ -20,19 +26,22 @@ mark[data-markjs] {
 mark[data-markjs].mark-selected {
 	background-color: #CF3F00;
 }
+/*---------------------------------------------------------------------------*/
 
-/* align checkbox to the first line (baseline) */
+/*------ align checkbox to the first line (baseline) ------------------------*/
 li.md-checkbox .checkbox-wrapper {
 	align-items: baseline;
 }
+/*---------------------------------------------------------------------------*/
 
-/* Add background and padding to preformatted text */
+/*------ Add background and padding to preformatted text --------------------*/
 pre {
 	padding:    0.5em;
 	background: #282c34;
 }
+/*---------------------------------------------------------------------------*/
 
-/* Headings: change background and padding */
+/*------ Headings: change background and padding ----------------------------*/
 h1, h2, h3, h4, h5, h6 {
 	background-color: #444444;
 	padding-bottom:   .1em;
@@ -40,8 +49,9 @@ h1, h2, h3, h4, h5, h6 {
 	padding-left:     .4em;
 	border-bottom:    unset;
 }
+/*---------------------------------------------------------------------------*/
 
-/* Headings: Use nested counters */
+/*------ Headings: Use nested counters --------------------------------------*/
 body { counter-reset: h1counter; }
 h1 { counter-reset: h2counter; }
 h2 { counter-reset: h3counter; }
@@ -79,8 +89,9 @@ h6:before {
 	counter-increment: h6counter;
 	content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ".\0000a0\0000a0";
 }
+/*---------------------------------------------------------------------------*/
 
-/* TOC: Use nested counters for list items */
+/*------ TOC: Use nested counters for list items ----------------------------*/
 .table-of-contents ol {
 	counter-reset: list-item;
 }
@@ -90,65 +101,76 @@ h6:before {
 .table-of-contents li:before {
 	content: counters(list-item,'.') '.\0000a0';
 }
+/*---------------------------------------------------------------------------*/
 
-/* TOC: Make TOC a fixed height and scrollable */
+/*------ TOC: Make TOC a fixed height and scrollable ------------------------*/
 /*
 .table-of-contents {
 	overflow-y: auto;
 	height: 18em;
 }
 */
+/*---------------------------------------------------------------------------*/
 
-/* Katex: Make font (symbols and formulas) bigger */
+/*------ Katex: Make font (symbols and formulas) bigger ---------------------*/
 /*
 .katex {
 	font-size: 1.6em;
 }
 */
+/*---------------------------------------------------------------------------*/
 
-/* set general link color - includes TOC links */
+/*------ set general link color (includes TOC links) ------------------------*/
 /*
 a {
 	color: #a6a6ff;
 }
 */
+/*---------------------------------------------------------------------------*/
 
-/* change the color of INTERNAL links */
+/*------ change the color of INTERNAL links ---------------------------------*/
 /*
 a[data-resource-id] {
 	color: #d28fff;
 }
 */
+/*---------------------------------------------------------------------------*/
 
-/* change other resource link icons to the same as the internal link color */
+/*------ change other resource link icons color to internal link color ------*/
 /*
 .resource-icon {
 	background-color: #d28fff;
 }
 */
+/*---------------------------------------------------------------------------*/
 
-/* do not display the Joplin resource icon */
+/*------ do not display the Joplin resource icon ----------------------------*/
 /*
 .resource-icon.fa-joplin {
 	display: none;
 }
 */
+/*---------------------------------------------------------------------------*/
 
-/* Better alignment for resource icons */
+/*------ Better alignment for resource icons --------------------------------*/
 .resource-icon {
 	top: .4em !important;
 }
+/*---------------------------------------------------------------------------*/
 
-/* Print: Adjustments for printing and PDF export */
+/*------ Print: Adjustments for printing and PDF export ---------------------*/
 @media print {
 
+	/* reset background and padding for preformatted text */
 	pre {
 		padding: unset;
 		background: unset;
 	}
 
+	/* lighter background for headings */
 	h1, h2, h3, h4, h5, h6 {
 		background-color: #eeeeee;
 	}
 
 }
+/*---------------------------------------------------------------------------*/
