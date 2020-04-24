@@ -5,42 +5,55 @@
  * which is defined in `userstyle.css`)                                      *
  *****************************************************************************/
 
+:root {
+	--editor-heading-color:            cyan;
+	--editor-heading-font-weight:      bold;                     /* not used */
+	--editor-heading-font-size:        1.1em;                    /* not used */
+	--editor-code-color:               greenyellow;
+	--editor-text-in-brackets-color:   #f9ee98;                /* yellow-ish */
+	--editor-strong-color:             salmon;
+	--editor-emphasis-color:           salmon;
+	--editor-emphasis-font-style:      italic;
+	--editor-list-element-color:       deepskyblue;
+}
+/* not used means it needs to be uncommented in the proper section */
+
 /*------ Editor: Headings ---------------------------------------------------*/
 .ace_heading {
-	color: cyan !important;
-	/* font-weight: bold; */
-	/*font-size: 1.1em;*/
+	color: var(--editor-heading-color) !important;
+	/* font-weight: var(--editor-heading-font-weight); */
+	/* font-size: var(--editor-heading-font-size); */
 }
 /*---------------------------------------------------------------------------*/
 
 /*------ Editor: inline code and codeblocks ---------------------------------*/
 .ace_support.ace_function {
-	color: greenyellow !important;
+	color: var(--editor-code-color) !important;
 }
 /*---------------------------------------------------------------------------*/
 
 /*------ Editor: text in brackets [ ] ---------------------------------------*/
 .ace_string {
-	color: #f9ee98 !important; /* yellow-ish */
+	color: var(--editor-text-in-brackets-color) !important;
 }
 /*---------------------------------------------------------------------------*/
 
 /*------ Editor: strong -----------------------------------------------------*/
 .ace_string.ace_strong {
-	color: salmon !important;
+	color: var(--editor-strong-color) !important;
 }
 /*---------------------------------------------------------------------------*/
 
 /*------ Editor: italics ----------------------------------------------------*/
 .ace_string.ace_emphasis {
-	color: salmon !important;
-	font-style: italic;
+	color: var(--editor-emphasis-color) !important;
+	font-style: var(--editor-emphasis-font-style);
 }
 /*---------------------------------------------------------------------------*/
 
 /*------ Editor: list elements and checkbox elements ------------------------*/
 .ace_list {
-	color: deepskyblue !important;
+	color: var(--editor-list-element-color) !important;
 }
 /*---------------------------------------------------------------------------*/
 
