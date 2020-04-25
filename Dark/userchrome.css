@@ -15,8 +15,9 @@
 	--editor-emphasis-color:           salmon;
 	--editor-emphasis-font-style:      italic;
 	--editor-list-element-color:       deepskyblue;
+	--editor-checkbox-color:           lightgrey;                /* not used */
 }
-/* not used means it needs to be uncommented in the proper section */
+/* not used: to take effect the proper section must be uncommented */
 
 /*------ Editor: Headings ---------------------------------------------------*/
 .ace_heading {
@@ -60,7 +61,7 @@
 /*------ Editor: checkbox [ ] and [x] ---------------------------------------*/
 /*
 .ace_variable {
-	color: lightgrey !important;
+	color: var(--editor-checkbox-color) !important;
 }
 */
 /*---------------------------------------------------------------------------*/
