@@ -5,26 +5,36 @@
  * Application styling is defined in `userchrome.css`                        *
  *****************************************************************************/
 
+:root {
+	--font-size:                     13px;
+	--mark-bgcolor:                  #BBDD66;                    /* greenish */
+	--search-result-bgcolor:         #F3B717;                       /* amber */
+	--current-search-result-bgcolor: #CF3F00;                         /* red */
+	--preformatted-text-bgcolor:     #282c34;                    /* darkgray */
+	--heading-bgcolor:               #444444;                        /* gray */
+	--heading-print-bgcolor:         #eeeeee;                   /* lightgray */
+}
+
 /*------ Change the font size to 13px ---------------------------------------*/
 body, th, td, .inline-code {
-	font-size: 13px;
+	font-size: var(--font-size);
 }
 /*---------------------------------------------------------------------------*/
 
 /*------ Colors for different mark tags -------------------------------------*/
 /* ==mark== */
 mark {
-	background-color: #BBDD66;
+	background-color: var(--mark-bgcolor);
 	padding:          1px 2px;
 }
 /* occurrences of search term */
 mark[data-markjs] {
-	background-color: #F3B717;
+	background-color: var(--search-result-bgcolor);
 	padding:          0;
 }
 /* current search term (local search) */
 mark[data-markjs].mark-selected {
-	background-color: #CF3F00;
+	background-color: var(--current-search-result-bgcolor);
 }
 /*---------------------------------------------------------------------------*/
 
@@ -37,13 +47,13 @@ li.md-checkbox .checkbox-wrapper {
 /*------ Add background and padding to preformatted text --------------------*/
 pre {
 	padding:    0.5em;
-	background: #282c34;
+	background: var(--preformatted-text-bgcolor);
 }
 /*---------------------------------------------------------------------------*/
 
 /*------ Headings: change background and padding ----------------------------*/
 h1, h2, h3, h4, h5, h6 {
-	background-color: #444444;
+	background-color: var(--heading-bgcolor);
 	padding-bottom:   .1em;
 	padding-top:      .2em;
 	padding-left:     .4em;
@@ -181,7 +191,7 @@ summary {
 
 	/* lighter background for headings */
 	h1, h2, h3, h4, h5, h6 {
-		background-color: #eeeeee;
+		background-color: var(--heading-print-bgcolor);
 	}
 
 }
