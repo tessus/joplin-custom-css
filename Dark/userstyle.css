@@ -194,5 +194,12 @@ summary {
 		background-color: var(--heading-print-bgcolor);
 	}
 
+	/* do not print note title (or when exporting to PDF) */
+	/*
+	.exported-note-title {
+		display: none !important;
+	}
+	*/
+
 }
 /*---------------------------------------------------------------------------*/
