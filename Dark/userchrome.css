@@ -11,11 +11,13 @@
 	--editor-heading-font-size:        1.1em;                    /* not used */
 	--editor-code-color:               greenyellow;
 	--editor-text-in-brackets-color:   #f9ee98;                 /* yellowish */
+	--editor-text-in-parens-color:     #dddddd;                 /* lightgrey */
 	--editor-strong-color:             salmon;
 	--editor-emphasis-color:           salmon;
 	--editor-emphasis-font-style:      italic;
 	--editor-list-element-color:       deepskyblue;
-	--editor-checkbox-color:           lightgrey;                /* not used */
+	--editor-checkbox-color:           lightgrey;
+	--editor-checkbox-checked-color:   #FFCB6B;                    /* orange */
 }
 /* not used: to take effect the proper section must be uncommented */
 
@@ -25,10 +27,16 @@
 	/* font-weight: var(--editor-heading-font-weight); */
 	/* font-size: var(--editor-heading-font-size); */
 }
+.cm-header {
+	color: var(--editor-heading-color) !important;
+}
 /*---------------------------------------------------------------------------*/
 
 /*------ Editor: inline code and codeblocks ---------------------------------*/
 .ace_support.ace_function {
+	color: var(--editor-code-color) !important;
+}
+.cm-comment {
 	color: var(--editor-code-color) !important;
 }
 /*---------------------------------------------------------------------------*/
@@ -37,10 +45,22 @@
 .ace_string {
 	color: var(--editor-text-in-brackets-color) !important;
 }
+.cm-link-text {
+	color: var(--editor-text-in-brackets-color) !important;
+}
+/*---------------------------------------------------------------------------*/
+
+/*------ Editor: text/link in parens ( ) ------------  ----------------------*/
+.cm-string.cm-url  {
+	color: var(--editor-text-in-parens-color) !important;
+}
 /*---------------------------------------------------------------------------*/
 
 /*------ Editor: strong -----------------------------------------------------*/
 .ace_string.ace_strong {
+	color: var(--editor-strong-color) !important;
+}
+.cm-strong {
 	color: var(--editor-strong-color) !important;
 }
 /*---------------------------------------------------------------------------*/
@@ -50,20 +70,30 @@
 	color: var(--editor-emphasis-color) !important;
 	font-style: var(--editor-emphasis-font-style);
 }
+.cm-em {
+	color: var(--editor-emphasis-color) !important;
+}
 /*---------------------------------------------------------------------------*/
 
 /*------ Editor: list elements and checkbox elements ------------------------*/
 .ace_list {
 	color: var(--editor-list-element-color) !important;
 }
+.cm-variable-2, .cm-variable-3, .cm-keyword {
+	color: var(--editor-list-element-color) !important;
+}
 /*---------------------------------------------------------------------------*/
 
 /*------ Editor: checkbox [ ] and [x] ---------------------------------------*/
-/*
 .ace_variable {
 	color: var(--editor-checkbox-color) !important;
 }
-*/
+.cm-meta {
+	color: var(--editor-checkbox-checked-color) !important;
+}
+.cm-property {
+	color: var(--editor-checkbox-checked-color) !important;
+}
 /*---------------------------------------------------------------------------*/
 
 /*------ Notebook and note list panes: Dim items ----------------------------*/
