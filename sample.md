@@ -25,6 +25,7 @@ Here's the [link](https://github.com/tessus/joplin-custom-css) to my `joplin-cus
 graph LR;
 A-->B;
 B-->C;
+B-->D;
 ```
 
 ## Katex
