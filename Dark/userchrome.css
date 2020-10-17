@@ -136,6 +136,11 @@ a.button[title="Code View"] {
 	display: none !important;
 }
 */
+/*
+div.editor-toolbar div button {
+	display: none !important;
+}
+*/
 /*---------------------------------------------------------------------------*/
 
 /*------ Input fields: Search (global, local), Note Title -------------------*/
