@@ -36,7 +36,7 @@
 .ace_support.ace_function {
 	color: var(--editor-code-color) !important;
 }
-.cm-comment {
+pre.CodeMirror-line span[role="presentation"] span.cm-comment {
 	color: var(--editor-code-color) !important;
 }
 /*---------------------------------------------------------------------------*/
