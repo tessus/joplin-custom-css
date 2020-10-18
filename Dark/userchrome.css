@@ -18,6 +18,7 @@
 	--editor-list-element-color:       deepskyblue;
 	--editor-checkbox-color:           lightgrey;
 	--editor-checkbox-checked-color:   #FFCB6B;                    /* orange */
+	--editor-selected-text-bgcolor:    #0663d3;                      /* blue */
 }
 /* not used: to take effect the proper section must be uncommented */
 
@@ -93,6 +94,12 @@ pre.CodeMirror-line span[role="presentation"] span.cm-comment {
 }
 .cm-property {
 	color: var(--editor-checkbox-checked-color) !important;
+}
+/*---------------------------------------------------------------------------*/
+
+/*------ Editor: selected text background color -----------------------------*/
+.CodeMirror-selected {
+	background: var(--editor-selected-text-bgcolor) !important;
 }
 /*---------------------------------------------------------------------------*/
 
