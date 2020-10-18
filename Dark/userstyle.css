@@ -156,12 +156,11 @@ h6:before {
 
 	nav.table-of-contents>ul:hover {
 		background: #444444;
-		box-shadow: -5px 0px 10px 0px rgba(0,0,0,0.15);
+		box-shadow: -5px 0px 10px 0px rgba(255,255,255,0.75);
 
 		width: 40%;
 		color: none;
 		overflow: scroll;
-		/*opacity: 0.8;*/
 	}
 
 	nav.table-of-contents>ul:hover::before {
