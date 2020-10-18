@@ -122,6 +122,67 @@ h6:before {
 */
 /*---------------------------------------------------------------------------*/
 
+/*------ TOC: Sidebar (move mouse to right edge) ----------------------------*/
+@media not print {
+
+	nav.table-of-contents ul {
+		list-style-type: none;
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+
+	nav.table-of-contents>ul {
+		top: 5px;
+		right: 0px;
+		z-index: 99;
+
+		font-size: 12px;
+		position: fixed;
+		padding: 15px;
+
+		border-radius: 10px 0px 0px 10px;
+		margin: 0px;
+
+		overflow: hidden;
+		height: 90%;
+		width: 5px;
+		transition: .2s;
+	}
+
+	nav.table-of-contents::after {
+		content: "[TOC - move your cursor to the right edge]";
+		color: #dddddd;
+	}
+
+	nav.table-of-contents>ul:hover {
+		background: #444444;
+		box-shadow: -5px 0px 10px 0px rgba(0,0,0,0.15);
+
+		width: 40%;
+		color: none;
+		overflow: scroll;
+		/*opacity: 0.8;*/
+	}
+
+	nav.table-of-contents>ul:hover::before {
+		content: "TABLE OF CONTENTS";
+	}
+
+	nav.table-of-contents>ul:hover li {
+		display: list-item;
+	}
+
+	nav.table-of-contents li {
+		display: none;
+		white-space: nowrap;
+		overflow: hidden;
+		margin: 0px;
+		padding: 0px;
+	}
+
+}
+/*---------------------------------------------------------------------------*/
+
 /*------ Katex: Make font (symbols and formulas) bigger ---------------------*/
 /*
 .katex {
