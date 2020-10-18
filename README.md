@@ -28,3 +28,7 @@ git fetch origin master:master && git rebase master
 ## Dark
 
 ![](images/Dark.png)
+
+## Credits
+
+Many of the CSS snippets were taken from different topics on the [Joplin forum](https://discourse.joplinapp.org/). A few of them I used ad verbatim, others I had to adjust to match my theme, and others served as an inspiration.
