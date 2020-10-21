@@ -1,0 +1,264 @@
+#!/usr/bin/env bash
+
+VERSION=1.0.0
+
+BASH=`which bash`
+BASH_VERSION=`$BASH --version |head -1 |sed 's/.*version \(.*\)-release.*/\1/' |cut -c 1`
+if [ $BASH_VERSION -lt 4 ]; then
+	echo "Error: bash must be at least version 4."
+	exit 1
+fi
+
+# Retrieve script directory (not following link)
+SCRIPT="${BASH_SOURCE[0]}"
+SCRIPT_DIR="$( cd "$( dirname "${SCRIPT}" )" && pwd )"
+INVOCATION_DIR=`pwd`
+PDIR="$(dirname "$SCRIPT_DIR")"
+BDIR="$(basename "$SCRIPT_DIR")"
+
+# Retrieve script name (follow link)
+PROG=`basename "$0"`
+
+# Themes are stored in an array
+# key: lowercase theme, value: directory of the theme
+declare -A THEME
+THEME[dark]=Dark
+
+DFT_THEME=dark
+
+# on macOS, the default getopt is a useless piece of shit
+# install getopt via MacPorts or brew and put it in the PATH before /usr/bin
+if [ "`getopt -V |cut -d\" \" -f1`" != "getopt" ]; then
+	echo "Error: getopt not compatible enough."
+	exit 1
+fi
+
+function usage {
+	echo "usage: ${PROG} [-t|--theme THEME] [-p|--profile PROFILE_DIR] [-x|--no-theme] [-c|--copy] [-d|--debug] [-V|--version] [-h] [--help]"
+}
+
+function long_usage {
+	echo "${PROG} - Theme Config Utility                                          "
+	echo ""
+	usage
+	echo ""
+	echo "       -t, --theme THEME                                                "
+	echo "           activate THEME                                               "
+	echo "           available themes:                                            "
+	for i in ${!THEME[@]}
+	do
+		echo "              $i"
+	done
+	echo "              none (same as -x, --no-theme)                             "
+	echo ""
+	echo "       -p, --profile PROFILE_DIR                                        "
+	echo "           Joplin profile directory                                     "
+	echo ""
+	echo "       -x, --no-theme                                                   "
+	echo "           deactivate current theme                                     "
+	echo ""
+	echo "       -d, --debug                                                      "
+	echo "           print debug information                                      "
+	echo ""
+	echo "       -c, --copy                                                       "
+	echo "           copy files instead of creating symbolic links                "
+	echo ""
+	echo "       -V, --version                                                    "
+	echo "           version information                                          "
+	echo ""
+	echo "       -h                                                               "
+	echo "           usage information                                            "
+	echo ""
+	echo "       --help                                                           "
+	echo "           this help                                                    "
+	echo ""
+}
+
+tflag=0
+targ=$DFT_THEME
+pflag=0
+xflag=0
+cflag=0
+dflag=0
+Vflag=0
+hflag=0
+hlflag=0
+
+options=$(getopt -n $PROG -q -o t:p:xcdVh -l help,version,debug,theme:,profile:,no-theme,copy -- "$@")
+if [ $? != 0 ]
+then
+	echo "${PROG}: Error: unrecognized option $1"
+	usage
+	exit 1
+fi
+
+eval set -- "$options"
+
+while [ $# -gt 0 ]
+do
+	case "$1" in
+	-t|--theme)
+		tflag=1
+		targ=${2,,}
+		shift;;
+	-p|--profile)
+		pflag=1
+		parg=$2
+		shift;;
+	-x|--no-theme)
+		xflag=1;;
+	-c|--copy)
+		cflag=1;;
+	-V|--version)
+		Vflag=1;;
+	-d|--debug)
+		dflag=1;;
+	-h)
+		hflag=1;;
+	--help)
+		hlflag=1;;
+	--)
+		shift; break;;
+	*)
+		exit;
+		break;;
+	esac
+	shift
+done
+
+if [ "$hflag" == "1" ]; then
+	usage
+	exit
+fi
+
+if [ "$hlflag" == "1" ]; then
+	long_usage
+	exit
+fi
+
+if [ "$Vflag" == "1" ]; then
+	echo "$PROG $VERSION"
+	exit
+fi
+
+function debug {
+	if [ "$dflag" == "1" ]; then
+		echo "[debug] $@"
+	fi
+}
+
+if [ "$xflag" == "1" ]; then
+	tflag=1
+	targ=none
+fi
+
+if [ "$tflag" == "0" ]; then
+	debug "Using default theme: $DFT_THEME"
+fi
+
+if [[ ${THEME[$targ]+_} || $targ == "none" ]]; then
+	if [ $targ == "none" ]; then
+		THEME_DIR=None
+	else
+		THEME_DIR=${THEME[$targ]}
+	fi
+else
+	echo "Error: available themes: ${!THEME[@]} none"
+	exit
+fi
+
+if [ $targ != "none" ]; then
+	debug "Theme: $targ [$THEME_DIR]"
+else
+	debug "Deactivate current theme"
+fi
+
+if [ "$pflag" == "1" ]; then
+	if [ -d "$parg" ]; then
+		PROFILE_DIR="$parg"
+	else
+		echo "Error: profile directory [$parg] does not exist."
+		exit 1
+	fi
+else
+	# Check, if database.sqlite exists in parent dir -> then it's the profile dir
+	if [ -f "$PDIR/database.sqlite" ]; then
+		PROFILE_DIR="$PDIR"
+	elif [ -d "$HOME/.config/joplin-desktop" ]; then
+		PROFILE_DIR=$HOME/.config/joplin-desktop
+	else
+		echo "Error: No profile directory found. Please specify with -p or --profile"
+		exit 1
+	fi
+fi
+
+debug "Profile directory: $PROFILE_DIR"
+
+cd $PROFILE_DIR
+
+# extension for backup file (if target is different than source)
+EXT=`date +%Y%m%d%H%M%S`
+
+themefiles=("userchrome.css" "userstyle.css")
+
+# Deactivate theme
+if [ $targ == "none" ]; then
+	for f in ${themefiles[*]}
+	do
+		if [ -f $f ]; then
+			B=0
+			if [ ! -f .theme ]; then
+				B=1
+			else
+				installed=`cat .theme`
+
+				# is the data in the file .theme really a valid theme (key)?
+				if [ ! ${THEME[$installed]+_} ]; then
+					B=1
+				# now check if the current file differs from the one in the theme directory
+				elif ! diff -q $f ${SCRIPT_DIR}/${THEME[$installed]}/$f >/dev/null; then
+					B=1
+				fi
+			fi
+			if [ $B == 1 ]; then
+				debug "Backup $f -> $f.$EXT"
+				cp $f $f.$EXT
+			fi
+			debug "Remove $f"
+			rm -f $f
+		fi
+	done
+	rm -f .theme
+	echo "Current theme deactivated."
+	exit
+fi
+
+# Activate theme
+for f in ${themefiles[*]}
+do
+	if [ -f $f ]; then
+		# check, if we have to backup
+		if ! diff -q $f ${SCRIPT_DIR}/${THEME_DIR}/$f >/dev/null; then
+			debug "Backup $f -> $f.$EXT"
+			cp $f $f.$EXT
+		fi
+		rm -f $f
+	fi
+	# copy or create links
+	if [ "$cflag" == "1" ]; then
+		debug "copy ${SCRIPT_DIR}/${THEME_DIR}/$f -> $f"
+		cp ${SCRIPT_DIR}/${THEME_DIR}/$f .
+	else
+		# check, if we can use relative links
+		if [ -d $BDIR ]; then
+			debug "create relative symbolic link [ $f -> $BDIR/${THEME_DIR}/$f]"
+			ln -fs $BDIR/${THEME_DIR}/$f $f
+		else
+			debug "create absolute symbolic link [ $f -> $SCRIPT_DIR/${THEME_DIR}/$f]"
+			ln -fs $SCRIPT_DIR/${THEME_DIR}/$f $f
+		fi
+	fi
+done
+
+echo "$targ" >.theme
+echo "Theme [$THEME_DIR] activated."
