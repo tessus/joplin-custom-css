@@ -163,33 +163,28 @@ input {
 /*---------------------------------------------------------------------------*/
 
 /*------ Attachment pane: make first 2 columns easier to read ---------------*/
-/* Joplin 1.0.x */
 #react-root > div > div > div:nth-child(2) > div:nth-child(2) > table > tbody > tr > td.titleCell,
 #react-root > div > div > div:nth-child(2) > div:nth-child(2) > table > tbody > tr > td:nth-child(2) {
 	font-size: unset !important;
 }
-/* Joplin >=1.2.x */
-#react-root > div > div > div:nth-child(1) > div:nth-child(2) > table > tbody > tr > td.titleCell,
-#react-root > div > div > div:nth-child(1) > div:nth-child(2) > table > tbody > tr > td:nth-child(2) {
-	font-size: unset !important;
-}
 /*---------------------------------------------------------------------------*/
 
-/*------ Sync button --------------------------------------------------------*/
-/* Add button background, add rounded corners */
-div.side-bar > div > button {
+/* Sync button */
+/* Add button background */
+#react-root > div > div > div.resizableLayoutItem.rli-root > div.resizableLayoutItem.rli-sidebarColumn > div > div > div:nth-child(2) > button {
 	background-color: #25282E !important;
 	border-radius: 16px !important;
+	width: 85% !important;
+	margin-left: 7.5% !important;
 }
 
-/* Outline colour change on hover */
-div.side-bar > div > button:hover {
-	border: 1px solid #3B74DF !important;
+/* Outline on hover */
+#react-root > div > div > div.resizableLayoutItem.rli-root > div.resizableLayoutItem.rli-sidebarColumn > div > div > div:nth-child(2) > button:hover {
+	border: 1px solid #0097DB !important;
 	border-radius: 16px !important;
 }
 
-/* Prevent button text color changing on hover */
-	div.side-bar > div > button > span {
+/* Prevent text color changing on hover */
+#react-root > div > div > div.resizableLayoutItem.rli-root > div.resizableLayoutItem.rli-sidebarColumn > div > div > div:nth-child(2) > button > span {
 	color: #FFFFFF !important;
 }
-/*---------------------------------------------------------------------------*/
