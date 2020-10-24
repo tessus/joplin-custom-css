@@ -163,8 +163,14 @@ input {
 /*---------------------------------------------------------------------------*/
 
 /*------ Attachment pane: make first 2 columns easier to read ---------------*/
+/* Joplin 1.0.x */
 #react-root > div > div > div:nth-child(2) > div:nth-child(2) > table > tbody > tr > td.titleCell,
 #react-root > div > div > div:nth-child(2) > div:nth-child(2) > table > tbody > tr > td:nth-child(2) {
+	font-size: unset !important;
+}
+/* Joplin >=1.2.x */
+#react-root > div > div > div:nth-child(1) > div:nth-child(2) > table > tbody > tr > td.titleCell,
+#react-root > div > div > div:nth-child(1) > div:nth-child(2) > table > tbody > tr > td:nth-child(2) {
 	font-size: unset !important;
 }
 /*---------------------------------------------------------------------------*/
