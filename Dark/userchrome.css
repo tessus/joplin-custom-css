@@ -23,29 +23,18 @@
 /* not used: to take effect the proper section must be uncommented */
 
 /*------ Editor: Headings ---------------------------------------------------*/
-.ace_heading {
-	color: var(--editor-heading-color) !important;
-	/* font-weight: var(--editor-heading-font-weight); */
-	/* font-size: var(--editor-heading-font-size); */
-}
 .cm-header {
 	color: var(--editor-heading-color) !important;
 }
 /*---------------------------------------------------------------------------*/
 
 /*------ Editor: inline code and codeblocks ---------------------------------*/
-.ace_support.ace_function {
-	color: var(--editor-code-color) !important;
-}
 pre.CodeMirror-line span[role="presentation"] span.cm-comment {
 	color: var(--editor-code-color) !important;
 }
 /*---------------------------------------------------------------------------*/
 
 /*------ Editor: text in brackets [ ] ---------------------------------------*/
-.ace_string {
-	color: var(--editor-text-in-brackets-color) !important;
-}
 .cm-link-text {
 	color: var(--editor-text-in-brackets-color) !important;
 }
@@ -58,37 +47,24 @@ pre.CodeMirror-line span[role="presentation"] span.cm-comment {
 /*---------------------------------------------------------------------------*/
 
 /*------ Editor: strong -----------------------------------------------------*/
-.ace_string.ace_strong {
-	color: var(--editor-strong-color) !important;
-}
 .cm-strong {
 	color: var(--editor-strong-color) !important;
 }
 /*---------------------------------------------------------------------------*/
 
 /*------ Editor: italics ----------------------------------------------------*/
-.ace_string.ace_emphasis {
-	color: var(--editor-emphasis-color) !important;
-	font-style: var(--editor-emphasis-font-style);
-}
 .cm-em {
 	color: var(--editor-emphasis-color) !important;
 }
 /*---------------------------------------------------------------------------*/
 
 /*------ Editor: list elements and checkbox elements ------------------------*/
-.ace_list {
-	color: var(--editor-list-element-color) !important;
-}
 .cm-variable-2, .cm-variable-3, .cm-keyword {
 	color: var(--editor-list-element-color) !important;
 }
 /*---------------------------------------------------------------------------*/
 
 /*------ Editor: checkbox [ ] and [x] ---------------------------------------*/
-.ace_variable {
-	color: var(--editor-checkbox-color) !important;
-}
 .cm-meta {
 	color: var(--editor-checkbox-checked-color) !important;
 }
@@ -109,7 +85,7 @@ a.list-item {
 	color: #A3A79F !important;
 }
 
-.fa.fa-plus-square, .fa.fa-minus-square {
+.fas.fa-caret-right, .fas.fa-caret-down {
 	color: #575856 !important;
 }
 
@@ -121,7 +97,7 @@ a.list-item {
 
 /*------ Notebook pane: use lines for notebook tree -------------------------*/
 /*
-.folders i.fa.fa-minus-square, .folders i.fa.fa-plus-square {
+.folders i.fas.fa-caret-right, .folders i.fas.fa-caret-down {
 	padding-right: 3px !important;
 }
 
@@ -138,11 +114,6 @@ a.list-item {
 /*---------------------------------------------------------------------------*/
 
 /*------ Remove Code View button --------------------------------------------*/
-/*
-a.button[title="Code View"] {
-	display: none !important;
-}
-*/
 /*
 div.editor-toolbar div button {
 	display: none !important;
@@ -163,12 +134,6 @@ input {
 /*---------------------------------------------------------------------------*/
 
 /*------ Attachment pane: make first 2 columns easier to read ---------------*/
-/* Joplin 1.0.x */
-#react-root > div > div > div:nth-child(2) > div:nth-child(2) > table > tbody > tr > td.titleCell,
-#react-root > div > div > div:nth-child(2) > div:nth-child(2) > table > tbody > tr > td:nth-child(2) {
-	font-size: unset !important;
-}
-/* Joplin >=1.2.x */
 #react-root > div > div > div:nth-child(1) > div:nth-child(2) > table > tbody > tr > td.titleCell,
 #react-root > div > div > div:nth-child(1) > div:nth-child(2) > table > tbody > tr > td:nth-child(2) {
 	font-size: unset !important;
