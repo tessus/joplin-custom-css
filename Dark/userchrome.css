@@ -121,6 +121,14 @@ div.editor-toolbar div button {
 */
 /*---------------------------------------------------------------------------*/
 
+/*------ Remove Spellcheck button -------------------------------------------*/
+/*
+a[title="Spell checker"] {
+	display: none;
+}
+*/
+/*---------------------------------------------------------------------------*/
+
 /*------ Input fields: Search (global, local), Note Title -------------------*/
 /* .header input { */
 input {
