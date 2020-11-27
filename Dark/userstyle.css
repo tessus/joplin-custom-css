@@ -185,6 +185,10 @@ h6:before {
 		padding: 0px;
 	}
 
+	nav.table-of-contents a {
+		text-decoration: none !important;
+	}
+
 }
 /*---------------------------------------------------------------------------*/
 
