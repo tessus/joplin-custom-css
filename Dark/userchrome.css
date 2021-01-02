@@ -113,6 +113,30 @@ a.list-item {
 */
 /*---------------------------------------------------------------------------*/
 
+/*------ Remove New notebook button -----------------------------------------*/
+/*
+#react-root > div > div > div.resizableLayoutItem.rli-root > div.resizableLayoutItem.rli-sideBar > div > div > div:nth-child(1) > div:nth-child(1) > button {
+	display: none;
+}
+*/
+/*---------------------------------------------------------------------------*/
+
+/*------ Remove New to-do button --------------------------------------------*/
+/*
+button[title="New to-do"] {
+	display: none;
+}
+*/
+/*---------------------------------------------------------------------------*/
+
+/*------ Remove New note button ---------------------------------------------*/
+/*
+button[title="New note"] {
+	display: none;
+}
+*/
+/*---------------------------------------------------------------------------*/
+
 /*------ Remove Code View button --------------------------------------------*/
 /*
 div.editor-toolbar div button {
