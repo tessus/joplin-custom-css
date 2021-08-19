@@ -36,7 +36,7 @@ pre.CodeMirror-line span[role="presentation"] span.cm-comment {
 
 /*------ Editor: codeblock issue macOS 10.14.x (https://g0to.ca/0k7vF) ------*/
 /*
-div.CodeMirror div.cm-jn-code-block {
+.CodeMirror .cm-jn-code-block {
 	background-color: unset !important;
 }
 */
