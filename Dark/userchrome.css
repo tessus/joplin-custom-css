@@ -182,19 +182,19 @@ input {
 
 /*------ Sync button --------------------------------------------------------*/
 /* Add button background, add rounded corners */
-div.side-bar > div > button {
+div.resizableLayoutItem.rli-sideBar > div > div > div:nth-child(2) > button {
 	background-color: #25282E !important;
 	border-radius: 16px !important;
 }
 
 /* Outline colour change on hover */
-div.side-bar > div > button:hover {
-	border: 1px solid #3B74DF !important;
+div.resizableLayoutItem.rli-sideBar > div > div > div:nth-child(2) > button:hover {
+	border: 1px solid #789FE9 !important;
 	border-radius: 16px !important;
 }
 
 /* Prevent button text color changing on hover */
-	div.side-bar > div > button > span {
+div.resizableLayoutItem.rli-sideBar > div > div > div:nth-child(2) > button > span {
 	color: #FFFFFF !important;
 }
 /*---------------------------------------------------------------------------*/
