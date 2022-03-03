@@ -6,19 +6,21 @@
  *****************************************************************************/
 
 :root {
-	--editor-heading-color:            cyan;
-	--editor-heading-font-weight:      bold;                     /* not used */
-	--editor-heading-font-size:        1.1em;                    /* not used */
-	--editor-code-color:               greenyellow;
-	--editor-text-in-brackets-color:   #f9ee98;                 /* yellowish */
-	--editor-text-in-parens-color:     #dddddd;                 /* lightgrey */
-	--editor-strong-color:             salmon;
-	--editor-emphasis-color:           salmon;
-	--editor-emphasis-font-style:      italic;
-	--editor-list-element-color:       deepskyblue;
-	--editor-checkbox-color:           lightgrey;
-	--editor-checkbox-checked-color:   #FFCB6B;                    /* orange */
-	--editor-selected-text-bgcolor:    #0663d3;                      /* blue */
+	--editor-heading-color:              cyan;
+	--editor-heading-font-weight:        bold;                   /* not used */
+	--editor-heading-font-size:          1.1em;                  /* not used */
+	--editor-code-color:                 greenyellow;
+	--editor-text-in-brackets-color:     #f9ee98;               /* yellowish */
+	--editor-text-in-parens-color:       #dddddd;               /* lightgrey */
+	--editor-strong-color:               salmon;
+	--editor-emphasis-color:             salmon;
+	--editor-emphasis-font-style:        italic;
+	--editor-list-element-color:         deepskyblue;
+	--editor-checkbox-color:             lightgrey;
+	--editor-checkbox-checked-color:     #FFCB6B;                  /* orange */
+	--editor-selected-text-bgcolor:      #0663d3;                    /* blue */
+	--note-count-label-background-color: #1d2927;
+	--note-count-label-box-shadow:       white;
 }
 /* not used: to take effect the proper section must be uncommented */
 
@@ -101,6 +103,21 @@ a.list-item {
 	opacity: .5;
 }
 */
+/*---------------------------------------------------------------------------*/
+
+/*------ Notebook pane: Nicer note count label ------------------------------*/
+.note-count-label.ihcmBd {
+	padding-left: 0;
+}
+.ihcmBd.note-count-label {
+	display: flex;
+	margin: 0 4px 0 auto;
+	padding: 0 6px;
+	background: var(--note-count-label-background-color);
+	border-radius: 8px;
+	box-shadow: 0 0 2px var(--note-count-label-box-shadow);
+	opacity: 1 !important;
+}
 /*---------------------------------------------------------------------------*/
 
 /*------ Notebook pane: use lines for notebook tree -------------------------*/
