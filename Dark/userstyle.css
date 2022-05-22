@@ -271,5 +271,11 @@ summary {
 	}
 	*/
 
+	/* do not print the anchor link symbol when the "Copy Anchor Link" */
+	/* plugin is active                                                */
+	.cai-gf {
+		display: none;
+	}
+
 }
 /*---------------------------------------------------------------------------*/
