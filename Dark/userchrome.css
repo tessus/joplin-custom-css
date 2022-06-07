@@ -106,13 +106,11 @@ a.list-item {
 /*---------------------------------------------------------------------------*/
 
 /*------ Notebook pane: Nicer note count label ------------------------------*/
-.note-count-label.ihcmBd {
-	padding-left: 0;
-}
-.ihcmBd.note-count-label {
+.note-count-label {
 	display: flex;
 	margin: 0 4px 0 auto;
 	padding: 0 6px;
+	padding-left: 0;
 	background: var(--note-count-label-background-color);
 	border-radius: 8px;
 	box-shadow: 0 0 2px var(--note-count-label-box-shadow);
