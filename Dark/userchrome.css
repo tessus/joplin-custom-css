@@ -146,7 +146,7 @@ a.list-item {
 
 /*------ Remove New to-do button --------------------------------------------*/
 /*
-button[title="New to-do"] {
+button.new-todo-button {
 	display: none;
 }
 */
@@ -154,7 +154,15 @@ button[title="New to-do"] {
 
 /*------ Remove New note button ---------------------------------------------*/
 /*
-button[title="New note"] {
+button.new-note-button {
+	display: none;
+}
+*/
+/*---------------------------------------------------------------------------*/
+
+/*------ Remove New note/to-do buttons (entire div)--------------------------*/
+/*
+div.new-note-todo-buttons {
 	display: none;
 }
 */
